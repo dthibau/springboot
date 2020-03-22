@@ -1,0 +1,26 @@
+my:
+  random: ${random.value}
+  
+  
+hello:
+  case-type: LOWER
+  greeting: Bonjour
+  position: 1
+  style: LowerCase
+  
+   
+---  
+spring :
+  profiles : prod
+
+logging:
+  file:
+    path: .
+    name: server.log
+
+logging.level:
+  root: INFO
+  org.springframework.boot: INFO 
+ 
+server:
+  port: 8000

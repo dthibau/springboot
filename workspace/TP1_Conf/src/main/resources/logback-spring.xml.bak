@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+	<springProfile name="prod">
+		<logger name="org.springframework" level="warn"/>
+	</springProfile>
+	<springProfile name="dev">
+	<logger name="org.springframework.boot" level="debug"/>
+    <logger name="org.springframework.web" level="info"/>
+ 	<logger name="org.hibernate" level="warn"/>
+ 	</springProfile>
+ 		 
+</configuration>
+

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Self-made security !!</title>
+    </head>
+    <body>
+        <form th:action="@{/web/authenticate}" th:object="${user}" method="post">
+            <div th:if="${#fields.hasErrors('*')}" th:errors=*{}>Attention erreurs !!</div>
+            <div><label> Email : <input type="text" th:field="*{email}"/> </label></div>
+            <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</div>
+            <div><label> Password: <input type="password" th:field="*{password}"/> </label></div>
+            <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</div>
+            <div><input type="submit" value="Sign In"/></div>
+        </form>
+    </body>
+</html>

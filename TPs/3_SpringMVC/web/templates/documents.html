@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Liste des documents</title>
+<link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+	<div th:if="${session.loggedUser != null}">
+		<h1>Your docs !</h1>
+		<ul>
+			<th:block th:object="${session.loggedUser}">
+				<li th:each="doc : *{documents}" th:text="${doc.name}"></li>
+			</th:block>
+		</ul>
+	</div>
+</body>
+</html>

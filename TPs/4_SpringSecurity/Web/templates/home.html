@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Spring MVC Exemple</title>
+        <link th:src="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    </head>
+    <body>
+        <h1>Bienvenue!</h1>
+
+        <p>Click <a th:href="@{/web/login}">ici</a> pour accèder à l'application.</p>
+        
+        <p>et <a th:href="@{/spring_secured}">ici</a> pour s'authentifier avec Spring.</p>
+    </body>
+</html>

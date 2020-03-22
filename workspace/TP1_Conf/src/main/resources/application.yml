@@ -1,0 +1,24 @@
+logging.level.org.springframework.boot: WARN
+
+my :
+  random : ${random.int(10)}
+  
+hello :
+  greeting : ${random.value}
+  position : 1
+  upper: uppercase 
+  
+---
+spring :
+  profiles : dev
+  
+logging:
+  file: server.log
+  path: .
+
+---  
+spring :
+  profiles : prod
+  
+server:
+  port: 8000
