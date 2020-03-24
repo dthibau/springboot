@@ -1,0 +1,24 @@
+spring:
+  jpa:
+    show-sql: true
+
+app:
+  email: ${random.value}
+  
+  
+---
+spring:
+  profiles:
+  - prod
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/formation
+    username: postgres
+    password: postgres
+    
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 5000
+  jpa:
+    hibernate:
+      ddl-auto: update
