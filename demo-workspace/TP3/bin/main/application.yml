@@ -10,6 +10,19 @@ logging:
   level:
     org.springframework.security: DEBUG  
   
+appli:
+  secretKey: azerty
+  validity: 10000
+  rememberMe: 10000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+   health:
+      show-details: always
 ---
 spring:
   profiles:
@@ -28,3 +41,15 @@ spring:
     hibernate:
       ddl-auto: update
       
+---
+spring:
+  profiles:
+    oauth
+    
+  security:
+    oauth2:
+      client: 
+        registration: 
+          github:
+            client-id: 65400b28079173786879
+            client-secret: b354d87a852b421b82a87094b8317da0d646aeb3

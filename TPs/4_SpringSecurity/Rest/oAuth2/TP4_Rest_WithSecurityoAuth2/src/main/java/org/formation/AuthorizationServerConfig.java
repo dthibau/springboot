@@ -3,7 +3,6 @@ package org.formation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
@@ -21,6 +20,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	static final String CLIENT_SECRET = "secret";
 	static final String GRANT_TYPE_PASSWORD = "password";
 	static final String AUTHORIZATION_CODE = "authorization_code";
+	static final String CLIENT_CREDENTIALS = "client_credentials";
     static final String REFRESH_TOKEN = "refresh_token";
     static final String IMPLICIT = "implicit";
 	static final String SCOPE_READ = "read";
@@ -51,7 +51,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 				.inMemory()
 				.withClient(CLIEN_ID)
 				.secret(CLIENT_SECRET)
-				.authorizedGrantTypes(GRANT_TYPE_PASSWORD, AUTHORIZATION_CODE, REFRESH_TOKEN, IMPLICIT )
+				.authorizedGrantTypes(GRANT_TYPE_PASSWORD, AUTHORIZATION_CODE, REFRESH_TOKEN, IMPLICIT, CLIENT_CREDENTIALS )
 				.scopes(SCOPE_READ, SCOPE_WRITE, TRUST)
 				.accessTokenValiditySeconds(ACCESS_TOKEN_VALIDITY_SECONDS).
 				refreshTokenValiditySeconds(FREFRESH_TOKEN_VALIDITY_SECONDS);
