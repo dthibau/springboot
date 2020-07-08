@@ -21,6 +21,7 @@ logging:
 logging.level:
   root: INFO
   org.springframework.boot: INFO 
- 
+
+  
 server:
   port: 8000
