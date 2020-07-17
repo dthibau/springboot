@@ -15,7 +15,16 @@ appli:
   secretKey: azerty
   validity: 10000
   rememberMe: 10000
-    
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        
+  endpoint:
+   health:
+      show-details: always    
 ---
 spring:
   profiles:
