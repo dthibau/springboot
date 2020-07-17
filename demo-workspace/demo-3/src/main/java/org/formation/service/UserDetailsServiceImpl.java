@@ -16,7 +16,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-@Profile("domain")
+@Profile({"domain","jwt"})
 public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Autowired

@@ -3,14 +3,19 @@ spring:
     show-sql: false
  
     open-in-view: false
-    
+ 
 my:
   email: ${random.value}@gmail.com
   
 logging:
   level:
     org.springframework.security: debug  
-  
+
+appli:
+  secretKey: azerty
+  validity: 10000
+  rememberMe: 10000
+    
 ---
 spring:
   profiles:
