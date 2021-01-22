@@ -118,7 +118,7 @@
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Authorization</stringProp>
-                <stringProp name="Header.value">Bearer ${TOKEN}</stringProp>
+                <stringProp name="Header.value">Bearer A${TOKEN}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
